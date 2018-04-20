@@ -74,13 +74,17 @@ function handleValidate(event) {
             }
             else if ((countChars(keyValuePair, '[') > countChars(keyValuePair, ']')) ||
                      (countChars(keyValuePair, '{') > countChars(keyValuePair, '}')) ) {
+
+                // Repair broken key value pairs
+
                 var j = i;
             
                 do {
                     j++;
                     keyValuePair += jsonArr[j];
-                } while ((countChars(keyValuePair, '[') > countChars(keyValuePair, ']')) ||
-                         (countChars(keyValuePair, '{') > countChars(keyValuePair, '}')));
+                } while (((countChars(keyValuePair, '[') > countChars(keyValuePair, ']')) ||
+                         (countChars(keyValuePair, '{') > countChars(keyValuePair, '}'))) &&
+                         j < jsonArr.length - 1);
 
                 var type = 'object';
 
