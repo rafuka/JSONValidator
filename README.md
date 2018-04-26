@@ -1,3 +1,3 @@
 # JSONValidator  
 
-(view demo)[https://rafuka.github.io/JSONValidator/]
+[view demo](https://rafuka.github.io/JSONValidator/)
